@@ -1,31 +1,26 @@
 # Simple Calculator in Python
 
-def add(x, y):
-    return x + y
+def calculate():
+    print("Select operation:")
+    print("1. Add")
+    print("2. Subtract")
+    print("3. Multiply")
 
-def subtract(x, y):
-    return x - y
+    choice = input("Enter choice (1/2): ")
 
-def multiply(x, y):
-    return x * y
+    num1 = int(input("Enter first number: "))
+    num2 = int(input("Enter second number: "))
 
-# Display menu
-print("Select operation:")
-print("1. Add")
-print("2. Subtract")
-print("3. Multiply")
+    if choice == '1':
+        print(f"Result: {num1 + num2}")
+    elif choice == '2':
+        print(f"Result: {num1 - num2}")
+    elif choice == '3':
+        print(f"Result: {num1 * num2}")
+    else:
+        print("Invalid input")
 
-# Get user input
-choice = input("Enter choice (1/2): ")
-num1 = float(input("Enter first number: "))
-num2 = float(input("Enter second number: "))
+# 🔐 Prevent this from running during import/test
+if __name__ == "__main__":
+    calculate()
 
-# Perform operation
-if choice == '1':
-    print("Result:", add(num1, num2))
-elif choice == '2':
-    print("Result:", subtract(num1, num2))
-elif choice == '3':
-    print("Result:", multiply(num1, num2))
-else:
-    print("Invalid input")
