@@ -1,25 +1,18 @@
-# Simple Calculator in Python
+# test_calculator.py
 
-def calculate():
-    print("Select operation:")
-    print("1. Add")
-    print("2. Subtract")
-    print("3. Multiply")
+import calculator
 
-    choice = input("Enter choice (1/2): ")
+def test_add():
+    assert calculator.add(2, 3) == 5
+    assert calculator.add(-1, 1) == 0
+    assert calculator.add(0, 0) == 0
 
-    num1 = int(input("Enter first number: "))
-    num2 = int(input("Enter second number: "))
+def test_subtract():
+    assert calculator.subtract(5, 2) == 3
+    assert calculator.subtract(0, 5) == -5
+    assert calculator.subtract(3, 3) == 0
 
-    if choice == '1':
-        print(f"Result: {num1 + num2}")
-    elif choice == '2':
-        print(f"Result: {num1 - num2}")
-    elif choice == '3':
-        print(f"Result: {num1 * num2}")
-    else:
-        print("Invalid input")
-
-# 🔐 Prevent this from running during import/test
-if __name__ == "__main__":
-    calculate()
+def test_multiply():
+    assert calculator.multiply(4, 2) == 8
+    assert calculator.multiply(0, 10) == 0
+    assert calculator.multiply(-2, 3) == -6
